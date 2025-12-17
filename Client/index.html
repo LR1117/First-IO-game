@@ -4,8 +4,16 @@
 <title>Liam Riedy IO game</title>
 </head>
 <body>
+<script src="main.js" defer></script>  
+
 <h1>Here is the Canvas</h1>
-<canvas id="gameCanvas" width="500" height="300" style="border:1px solid #000000;">
-<script src="main.js" defer></script>
+
+<button onclick = "toggleCanvas()" onclick = "toggleAnimation()">Press Me to show the canvas</button>
+
+<div id="canvasContatiner" style = "display: block; margin-top: 10px;">
+    <canvas id="gameCanvas" width="500" height="300" style="border:1px solid #000000;">   
+</div>
+
+
 </body>
 </html>
