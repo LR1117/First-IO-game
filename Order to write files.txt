@@ -1,0 +1,150 @@
+ALSO ALL AI, BUT I NEED TO HAVE Direction
+
+
+# What Files to Write First – Multiplayer IO Game
+
+This guide tells you **exactly which files to write first**, in order, and *why*.
+It is designed for an APCSA student building a Canvas + Node.js + Socket.IO game.
+
+---
+
+## Phase 0 – Absolute Minimum (Day 1)
+
+### 1. client/index.html
+**Purpose:** Entry point for the game.
+- Creates the `<canvas>`
+- Loads your JavaScript
+
+Nothing runs without this file.
+
+---
+
+### 2. client/main.js
+**Purpose:** Client main method.
+- Gets canvas + context
+- Starts the game loop
+- Draws one moving shape
+
+Goal: See *something* move on the screen.
+
+---
+
+## Phase 1 – Core Game Loop (Day 1–2)
+
+### 3. client/game/game.js
+**Purpose:** Game loop controller.
+- update()
+- render()
+
+Equivalent to a `while(true)` loop in Java.
+
+---
+
+### 4. client/game/player.js
+**Purpose:** Player class.
+- position (x, y)
+- velocity
+- update logic
+- draw method
+
+This should feel very familiar from APCSA.
+
+---
+
+## Phase 2 – Player Input (Day 2)
+
+### 5. client/input/keyboard.js
+**Purpose:** Capture keyboard input.
+- Listen for key presses
+- Store movement intent
+
+Do NOT move the player here.
+
+---
+
+## Phase 3 – Multiplayer Basics (Day 3)
+
+### 6. server/index.js
+**Purpose:** Start the Node.js server.
+- Initialize Socket.IO
+- Log connections and disconnects
+
+No gameplay yet.
+
+---
+
+### 7. client/network/socket.js
+**Purpose:** Client-server connection.
+- Connect to server
+- Confirm connection works
+
+---
+
+## Phase 4 – Shared Truth (Day 4)
+
+### 8. shared/constants.js
+**Purpose:** Shared configuration.
+- Player speed
+- Sizes
+- Tick rate
+
+Prevents magic numbers.
+
+---
+
+### 9. server/game/player.js
+**Purpose:** Server-side player class.
+- Authoritative position
+- Movement logic
+
+Server becomes the referee.
+
+---
+
+## Phase 5 – Real Multiplayer Movement (Day 5–6)
+
+### 10. server/game/gameLoop.js
+**Purpose:** Server heartbeat.
+- Fixed tick rate
+- Update players
+- Send state snapshots
+
+---
+
+### 11. client/network/handlers.js
+**Purpose:** Receive server updates.
+- Update local player
+- Update other players
+
+Interpolation comes later.
+
+---
+
+## Minimal Starter File List
+
+If you want the smallest possible setup:
+
+client/
+- index.html
+- main.js
+- game/game.js
+- game/player.js
+
+server/
+- index.js
+
+shared/
+- constants.js
+
+---
+
+## APCSA Translation
+
+- main.js → `public static void main`
+- player.js → Player class
+- game.js → Game controller
+- server → Teacher grading the game rules
+
+---
+
+Build in this order. Do not skip ahead.
