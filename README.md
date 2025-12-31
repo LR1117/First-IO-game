@@ -1,0 +1,1 @@
+My first web dev project. Just trying to learn how the front end and back end work together. Any suggestions or tips are very much appreciated! You can contribute, but I am trying to learn, so minimal changes would be nice!
