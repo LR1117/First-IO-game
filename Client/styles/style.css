@@ -1,0 +1,22 @@
+#UIContainerDiv{
+    position: relative;
+
+    width: 500px;
+    height: 300px; 
+    border: 1px solid black;
+
+}
+
+#UIContainer{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 1;
+}
+
+#gameToggle{
+    position: absolute;
+    top:50px;
+    left:50px;
+    z-index: 2;
+}

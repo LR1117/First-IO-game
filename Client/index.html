@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Liam Riedy IO game</title>
+    <title>Liam Riedy IO game</title>
+    <link rel="stylesheet" href=""styles.css">
 </head>
+
 <body>
-<script src="main.js" defer></script>  
 
-<h1>Here is the Canvas</h1>
-<p id="Position">Your mouse position is X:0, Y:0 </p>
-<button onclick = "toggleCanvas()" >Press Me to show the canvas</button>
+    <script src="main.js" defer></script>  
 
-<div id="canvasContatiner" style = "display: block; margin-top: 10px;">
-    <canvas id="gameCanvas" width="500" height="300" style="border:1px solid #000000;">   
-</div>
+    <h1>Here is the Canvas</h1>
 
+    <div id="UIContainerDiv" style = "display: block; margin-top: 10px;">
+        <canvas id="UIContainer" width = "500" height="300"></canvas>
+        <button id="gameToggle" onclick = "toggleCanvas()" >Game Toggle</button>
+    </div>
+    
+    <!-- I do not like the was the canvas bc. there is to much space. -->
+    
+    
+    
+    <div id="LogIn" style = "display: block; margin-top: 10px;">
+        <form id="loginForm">
+            <label for="username">Username:</label><br>
+            <input type="text" id="usernameInput" name="username"><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="passwordInput" name="Password">
+        </form>
+
+        <button id="loginButton" onclick="login()">Login</button>
+        <button id="registerButton" onclick="register()">Register</button>
+
+    </div>
+
+    <div id="canvasContatiner" style = "display: block; margin-top: 10px;">
+        <canvas id="gameCanvas" width="500" height="300" style="border:1px solid #000000;"> </canvas>  
+    </div>
 
 </body>
 </html>
